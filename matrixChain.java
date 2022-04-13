@@ -30,5 +30,6 @@ public class matrixChain {
                 }
             }
         System.out.println(C[1][N]);
+        scanner.close();
     }
 }
