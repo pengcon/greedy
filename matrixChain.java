@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Chain {
+public class matrixChain {
     private static final int INF = Integer.MAX_VALUE;
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);

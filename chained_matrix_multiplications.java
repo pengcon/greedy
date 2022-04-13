@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class chained_matrix_multiplications {
+    private static final int INF = Integer.MAX_VALUE;
     static int[][] matrix;                                  //행렬
     static int[][] c;                                       //곱셈횟수
     static int n;                                           //곱하는 행렬의 개수
@@ -26,7 +27,7 @@ public class chained_matrix_multiplications {
 
     public static int minimum(int x, int y)
     {
-        int result = 201901687;                                 //최솟값을 초기화
+        int result = INF;                                 //최솟값을 초기화
 
         if (x == y)
         {
