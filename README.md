@@ -30,6 +30,56 @@
 * 따라서 최종 시간복잡도는 ***O(n) + O(n) + O(nlogn) + O(1)***
 ---
 4. **코드 설명**
->화살표 활용하기
+>self.___... 를 이용하여 노드와 필요한 변수를 정의  
+
+>엣지노드가 아닐 때 까지 재귀
+```
+ if(node.left):
+        output(node.left, Value)
+    if(node.right):
+        output(node.right, Value)
+```
+
+>엣지 노드에 도착하면 허프만 코드를 출력.
+```
+if(not node.left and not node.right):
+    print(node.symbol, {Value})
+```
+
+>영어문장 입력, 소문자로 변경 후 아스키 코드를 이용해 빈도수 카운트  
+
+>빈도수가 적은 순서대로 정렬
+```
+while (len(nodes) > 1):
+    nodes = sorted(nodes, key=lambda x: x.freq)
+```
+
+>빈도수가 작은 노드 2개를 합쳐 제거 후 새로운 노드를 추가
+```
+left = nodes[0]
+right = nodes[1]
+
+left.huff = 0
+right.huff = 1
+
+newNode = node(left.freq+right.freq, left.symbol+right.symbol, left, right)
+
+nodes.remove(left)
+nodes.remove(right)
+nodes.append(newNode)
+```
+
+>출력
+```
+output(nodes[0])
+```
+
 ---
 5. **코드의 시간복잡도 계산**
+* 입력되는 문자 수 n개의 노드생성과 빈도수저장: *O(n)*
+* 힙 생성: *O(n)*
+* 빈도수 작은 순서로 정렬: *O(n)*
+* 노드 삭제와 새 노드 추가하는 연산: *O(nlogn)*
+* 마지막 트리의 리턴: *O(1)*  
+
+>위 허프만코드의 시간복잡도 = **O(3n+nlogn+1)**
