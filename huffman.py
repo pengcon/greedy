@@ -30,10 +30,24 @@ def output(node, val=''):
   
   
 # 알파벳들
-Alpha = ['a','b', 'c','d','e','f' ]
+
+Alpha = [ ]
 
 #빈도수
-freq = [7,9, 13,15,19,45 ]
+freq = [ ]
+
+#영어 문장 입력
+a=input()
+
+#카운트를 위해 모두 소문자로 변경
+a=a.lower()
+
+#아스키코드를 이용하여 알파벳의 빈도수를 카운트.
+for i in range(97,123):
+    alp=chr(i)
+    if a.count(alp)>0:
+        Alpha.append(alp)
+        freq.append(a.count(alp))
 
 #노드를 담을 리스트
 nodes = []
@@ -59,5 +73,5 @@ while (len(nodes) > 1):
     nodes.remove(left)
     nodes.remove(right)
     nodes.append(newNode)
-#허프만 코드 출력
+
 output(nodes[0])    
