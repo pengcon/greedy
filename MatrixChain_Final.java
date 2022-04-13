@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class MatrixChain_Final {
+    private static final int INF = Integer.MAX_VALUE;
     static int[][] matrix;
     static int[][] c;
     static int n;
@@ -26,7 +27,7 @@ public class MatrixChain_Final {
 
     public static int minimum(int x, int y)
     {
-        int result = 1234567890;
+        int result = INF;
 
         if (x == y)
         {
